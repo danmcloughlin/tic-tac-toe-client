@@ -65,6 +65,51 @@
     </div>
   </div>
 
+  <!-- Sign Out Modal -->
+  <button id="sign-out" type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signOutModal">
+  Sign Out
+  </button>
+  <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="signOutLabel">Sign Out</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            You are signed out.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changePasswordModal">
+  Change Password
+  </button>
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="changePasswordLabel">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <input name="passwords[old]" id="change-password-old" type="password" value="" placeholder="Old Password">
+            <input name="passwords[new]" id="change-password-new" type="password" value="" placeholder="New Password">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <input type="submit" name="submit" value="Change Password" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container-fluid game-board">
     <div class="row">
       <div class="col-xs-4" id="index-0"></div>

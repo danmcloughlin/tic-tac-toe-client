@@ -29,11 +29,34 @@ const onSignInConfirm = function (event) {
   $('#signInModal').modal('hide')
 }
 
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+  console.log('sign out ran!')
+}
+
+const onPasswordReset = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
+const passwordResetConfirm = function (event) {
+  $('#changePasswordModal').modal('hide')
+}
+
 const addAuthHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('click', onSignOut)
+  $('#change-password').on('submit', onPasswordReset)
   $('#signUpModal').on('submit', onSignUpConfirm)
   $('#signInModal').on('submit', onSignInConfirm)
+  $('#changePasswordModal').on('submit', passwordResetConfirm)
 }
 
 module.exports = {

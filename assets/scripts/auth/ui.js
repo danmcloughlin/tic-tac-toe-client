@@ -19,9 +19,30 @@ const signInFailure = (error) => {
   console.log('signIn failure ran. error is:', error)
 }
 
+const signOutSuccess = () => {
+  console.log('signOut success ran and nothing was returned')
+  store.user = null
+}
+
+const signOutFailure = (error) => {
+  console.log('signOut failure ran. error is:', error)
+}
+
+const changePasswordSuccess = (data) => {
+  console.log('passWord change success ran. data is:', data)
+}
+
+const changePasswordFailure = (error) => {
+  console.log('signOut failure ran. error is:', error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  signOutSuccess,
+  signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
