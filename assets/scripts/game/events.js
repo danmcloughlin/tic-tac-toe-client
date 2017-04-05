@@ -13,7 +13,19 @@ const populateSquare = function () {
   $(this).off('click')
 }
 
+const addHandlers = () => {
+  $('#index-0').on('click', populateSquare)
+  $('#index-1').on('click', populateSquare)
+  $('#index-2').on('click', populateSquare)
+  $('#index-3').on('click', populateSquare)
+  $('#index-4').on('click', populateSquare)
+  $('#index-5').on('click', populateSquare)
+  $('#index-6').on('click', populateSquare)
+  $('#index-7').on('click', populateSquare)
+  $('#index-8').on('click', populateSquare)
+}
+
 module.exports = {
-  populateSquare,
-  clickCount
+  clickCount,
+  addHandlers
 }
