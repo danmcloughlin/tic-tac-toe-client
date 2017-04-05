@@ -1,8 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.container-fluid {
-  width: 80%;
+.game-board {
+  width: 60%;
+  clear: both;
 }
 
 .col-xs-4 {
@@ -11,4 +12,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 50px;
   font-size: 30px;
   text-align: center;
+}
+
+.form-wrapper {
+  width: 40%;
+  float: right;
+}
+
+.form-inline {
+  padding: 20px 0 20px 0;
 }
