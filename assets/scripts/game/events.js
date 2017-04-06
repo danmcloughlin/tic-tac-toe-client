@@ -45,7 +45,7 @@ const populateSquare = function () {
     }
     api.updateBoard(data)
     .then(ui.newMoveSuccess)
-    .catch(ui.newMoveFailure)
+    .catch(gameStore.game.cells)
   }
 }
 

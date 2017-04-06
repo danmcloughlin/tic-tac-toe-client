@@ -1,6 +1,7 @@
 'use strict'
 
 const gameStore = require('../game-store.js')
+const win = require('../game-logic.js')
 
 const resetBoard = function () {
   $('#0').empty().css('background-color', 'transparent')
@@ -30,6 +31,9 @@ const newMoveSuccess = (data) => {
   console.log(data)
   gameStore.game.cells = data.game.cells
   console.log('gameStore game cells', gameStore.game.cells)
+  win.winCheck(gameStore.game.cells)
+  console.log('array to check win against ', gameStore.game.cells)
+  console.log(win.winCheck(gameStore.game.cells))
 }
 
 const newMoveFailure = (error) => {
