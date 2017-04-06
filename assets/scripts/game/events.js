@@ -2,19 +2,20 @@
 
 const ui = require('./ui')
 const api = require('./api')
+const gameStore = require('../game-store.js')
 
 const startNewGame = function (event) {
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
+  ui.resetBoard()
+  addHandlers()
 }
-
-let clickCount = 1
 
 const populateSquare = function () {
   $(this).css('background-color', 'pink')
   const index = parseInt($(this).attr('id'))
-  if (clickCount % 2 === 1) {
+  if (gameStore.game.clickCount % 2 === 1) {
     this.innerHTML = 'x'
     const value = 'x'
     const data = {
@@ -29,8 +30,7 @@ const populateSquare = function () {
     api.updateBoard(data)
       .then(ui.newMoveSuccess)
       .catch(ui.newMoveFailure)
-    console.log(data)
-  } else if (clickCount % 2 === 0) {
+  } else {
     this.innerHTML = 'o'
     const value = 'o'
     const data = {
@@ -45,9 +45,7 @@ const populateSquare = function () {
     api.updateBoard(data)
     .then(ui.newMoveSuccess)
     .catch(ui.newMoveFailure)
-    console.log(data)
   }
-  clickCount++
   $(this).off('click')
 }
 
@@ -65,6 +63,5 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  clickCount,
   addHandlers
 }
