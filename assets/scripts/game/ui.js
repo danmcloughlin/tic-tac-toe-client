@@ -18,6 +18,7 @@ const newGameSuccess = (data) => {
   console.log(data)
   gameStore.game = data.game
   gameStore.game.clickCount = 1
+  console.log('gameStore game ', gameStore.game)
 }
 
 const newGameFailure = (error) => {
@@ -26,7 +27,9 @@ const newGameFailure = (error) => {
 
 const newMoveSuccess = (data) => {
   gameStore.game.clickCount++
-  console.log('gameStore.game ', gameStore.game)
+  console.log(data)
+  gameStore.game.cells = data.game.cells
+  console.log('gameStore game cells', gameStore.game.cells)
 }
 
 const newMoveFailure = (error) => {
