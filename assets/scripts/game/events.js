@@ -27,6 +27,8 @@ const populateSquare = function () {
       }
     }
     api.updateBoard(data)
+      .then(ui.newMoveSuccess)
+      .catch(ui.newMoveFailure)
     console.log(data)
   } else if (clickCount % 2 === 0) {
     this.innerHTML = 'o'
@@ -41,6 +43,8 @@ const populateSquare = function () {
       }
     }
     api.updateBoard(data)
+    .then(ui.newMoveSuccess)
+    .catch(ui.newMoveFailure)
     console.log(data)
   }
   clickCount++

@@ -1,6 +1,7 @@
 'use strict'
 
 const config = require('../config')
+const gameStore = require('../game-store.js')
 const store = require('../store')
 
 const newGame = () => {
@@ -15,7 +16,7 @@ const newGame = () => {
 
 const updateBoard = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.game.id,
+    url: config.apiOrigin + '/games/' + gameStore.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
