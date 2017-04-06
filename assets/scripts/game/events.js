@@ -9,6 +9,7 @@ const startNewGame = function (event) {
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
   ui.resetBoard()
+  removeHandlers()
   addHandlers()
 }
 
@@ -59,6 +60,18 @@ const addHandlers = () => {
   $('#6').one('click', populateSquare)
   $('#7').one('click', populateSquare)
   $('#8').one('click', populateSquare)
+}
+
+const removeHandlers = () => {
+  $('#0').off('click')
+  $('#1').off('click')
+  $('#2').off('click')
+  $('#3').off('click')
+  $('#4').off('click')
+  $('#5').off('click')
+  $('#6').off('click')
+  $('#7').off('click')
+  $('#8').off('click')
 }
 
 const addNewGameHandler = () => {
