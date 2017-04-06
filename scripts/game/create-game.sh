@@ -2,7 +2,7 @@
 
 #run below with no # sign in terminal. It will call the script and run it.
 
-#TOKEN=BAhJIiVhMGRjYzUyZTM2Y2VlYWRkMmI2Nzg1ODc4OTYwZmRjZAY6BkVG--5fb146d5ccf63bdbbf6995c83b0b5028e8883fe5 sh scripts/game/create-game.sh
+#TOKEN=BAhJIiUxZWJlYTk0M2Y2MjQ0YzBiMDFhYjg4MjMyOTk4NTNlNQY6BkVG--550a95be31dc94c6921b5aba70e7a0770a843d21 sh scripts/game/create-game.sh
 API="${API_ORIGIN:-http://localhost:4741}"
   URL_PATH="/games"
   curl "${API}${URL_PATH}" \
