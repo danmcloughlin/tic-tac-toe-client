@@ -8,6 +8,6 @@ const authEvents = require('./auth/events')
 // On document ready
 $(() => {
   setAPIOrigin(location, config)
-  gameEvents.addHandlers()
+  gameEvents.addNewGameHandler()
   authEvents.addAuthHandlers()
 })

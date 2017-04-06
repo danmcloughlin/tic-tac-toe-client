@@ -13,6 +13,7 @@ const startNewGame = function (event) {
 }
 
 const populateSquare = function () {
+  console.log('what is click count', gameStore.game.clickCount)
   $(this).css('background-color', 'pink')
   const index = parseInt($(this).attr('id'))
   if (gameStore.game.clickCount % 2 === 1) {
@@ -46,22 +47,25 @@ const populateSquare = function () {
     .then(ui.newMoveSuccess)
     .catch(ui.newMoveFailure)
   }
-  $(this).off('click')
 }
 
 const addHandlers = () => {
-  $('#0').on('click', populateSquare)
-  $('#1').on('click', populateSquare)
-  $('#2').on('click', populateSquare)
-  $('#3').on('click', populateSquare)
-  $('#4').on('click', populateSquare)
-  $('#5').on('click', populateSquare)
-  $('#6').on('click', populateSquare)
-  $('#7').on('click', populateSquare)
-  $('#8').on('click', populateSquare)
+  $('#0').one('click', populateSquare)
+  $('#1').one('click', populateSquare)
+  $('#2').one('click', populateSquare)
+  $('#3').one('click', populateSquare)
+  $('#4').one('click', populateSquare)
+  $('#5').one('click', populateSquare)
+  $('#6').one('click', populateSquare)
+  $('#7').one('click', populateSquare)
+  $('#8').one('click', populateSquare)
+}
+
+const addNewGameHandler = () => {
   $('#new-game-button').on('click', startNewGame)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  addNewGameHandler
 }

@@ -26,7 +26,7 @@ const newGameFailure = (error) => {
 
 const newMoveSuccess = (data) => {
   gameStore.game.clickCount++
-  console.log(gameStore.game)
+  console.log('gameStore.game ', gameStore.game)
 }
 
 const newMoveFailure = (error) => {
