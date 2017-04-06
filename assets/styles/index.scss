@@ -2,15 +2,31 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 .game-board {
-  width: 60%;
+  width: 40%;
   clear: both;
+  min-height: 50;
 }
 
 .col-xs-4 {
-  border: 1px solid black;
-  height: 50px;
+  min-height: 50px;
   font-size: 30px;
   text-align: center;
+}
+
+.row-1 {
+  border-bottom: 3px solid black;
+}
+
+.row-2 {
+  border-bottom: 3px solid black;
+}
+
+.column-1 {
+  border-right: 3px solid black;
+}
+
+.column-2 {
+  border-right: 3px solid black;
 }
 
 .form-wrapper {

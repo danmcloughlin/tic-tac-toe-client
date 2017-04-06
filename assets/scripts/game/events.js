@@ -15,7 +15,7 @@ const startNewGame = function (event) {
 
 const populateSquare = function () {
   console.log('what is click count', gameStore.game.clickCount)
-  $(this).css('background-color', 'pink')
+  $(this).css('background-color', '#94E5D6')
   const index = parseInt($(this).attr('id'))
   if (gameStore.game.clickCount % 2 === 1) {
     this.innerHTML = 'x'
